@@ -55,6 +55,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	/**
 	 * SQL for creating table WAYPOINT
 	 */
+
+
+/**
+ * Josué:
+ * SQL for creating table WAYPOINT
+ */
+
+// TODO(propuesta): agregar a la tabla waypoint una columna opcional "attributes"
+// (text, null) con un JSON de pares clave-valor. Ejemplo:
+// {"Género":"Quercus","Especie":"robur","Altura":"12 m"}
+// Retrocompatible: attributes = NULL significa waypoint antiguo, sin atributos.
+// Iría después de COL_ATMOSPHERIC_PRESSURE. NO se cambia el esquema real todavía.
+
+
+
+
+
+
 	private static final String SQL_CREATE_TABLE_WAYPOINT = ""
 		+ "create table " + TrackContentProvider.Schema.TBL_WAYPOINT + " ("
 		+ TrackContentProvider.Schema.COL_ID + " integer primary key autoincrement,"
@@ -144,6 +162,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * v18: add TBL_NOTE
 	 * v19: add TBL_TRACKPOINT.COL_SEG_ID for track segments support
 	 * v20: normalize TBL_TRACK.COL_OSM_VISIBILITY to Identifiable
+	 * v21 (PROPUESTA, no implementada): add TBL_WAYPOINT.COL_ATTRIBUTES (text, null)--Josué
 	 *</pre>
 	 */
 	private static final int DB_VERSION = 20;
@@ -217,6 +236,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 							Track.OSMVisibility.Identifiable.name(),
 							Track.OSMVisibility.Trackable.name(),
 							Track.OSMVisibility.Identifiable.name()
+
+							// TODO(propuesta): al implementar, subir DB_VERSION a 21 y agregar:
+							// case 20:
+							//     db.execSQL("alter table " + TrackContentProvider.Schema.TBL_WAYPOINT
+							//         + " add column " + TrackContentProvider.Schema.COL_ATTRIBUTES + " text null");
+							// Es seguro: las filas existentes quedan en NULL y siguen funcionando igual.
 			});
 		}
 	}
