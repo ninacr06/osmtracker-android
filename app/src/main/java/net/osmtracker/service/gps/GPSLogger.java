@@ -132,7 +132,9 @@ public class GPSLogger extends Service implements LocationListener {
 							String uuid = extras.getString(OSMTracker.INTENT_KEY_UUID);
 							String name = extras.getString(OSMTracker.INTENT_KEY_NAME);
 							String link = extras.getString(OSMTracker.INTENT_KEY_LINK);
-
+							// TODO(propuesta): leer los atributos del intent (INTENT_KEY_ATTRIBUTES) y pasarlos
+							// a DataHelper para guardarlos junto con el waypoint (ver columna de atributos en db/).
+							// Lo mismo aplica a la rama INTENT_UPDATE_WP, que es la que guardaria la ficha.
 							dataHelper.wayPoint(trackId, lastLocation, name, link, uuid, sensorListener.getAzimuth(), sensorListener.getAccuracy(), pressureListener.getPressure());
 
 							// If there is a waypoint in the track, there should also be a trackpoint

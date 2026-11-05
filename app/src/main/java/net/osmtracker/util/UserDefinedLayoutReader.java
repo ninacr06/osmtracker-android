@@ -272,6 +272,9 @@ public class UserDefinedLayoutReader {
 
 		String buttonType = parser.getAttributeValue(null, XmlSchema.ATTR_TYPE);
 		Drawable buttonIcon = null;
+		// TODO(propuesta): agregar un tipo de boton "ficha" (constante ATTR_VAL_FICHA en XmlSchema)
+		// con su propio listener que abra el formulario Nueva ficha, y declararlo en
+		// res/xml/default_buttons_layout.xml como <button type="ficha" />.
 		if (XmlSchema.ATTR_VAL_PAGE.equals(buttonType)) {
 			// Page button
 			button.setText(findLabel(parser.getAttributeValue(null, XmlSchema.ATTR_LABEL), resources));				

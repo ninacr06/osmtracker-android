@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TODO(propuesta): fila de UN atributo clave-valor de la ficha.
+  Recurso de borrador: todavia no esta conectado a ninguna actividad.
+  Se infla por codigo (LayoutInflater) cada vez que se presiona "Agregar atributo"
+  y se agrega a @id/ficha_attributes_container de ficha_dialog.xml.
+  Enfoque A: todas las filas terminan en un unico waypoint.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:gravity="center_vertical">
+
+    <EditText
+            android:id="@+id/ficha_attribute_key"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Clave (ej. Especie)"
+            android:imeOptions="actionNext"
+            android:inputType="text|textCapSentences" />
+
+    <EditText
+            android:id="@+id/ficha_attribute_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Valor (ej. robur)"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
+
+    <Button
+            android:id="@+id/ficha_attribute_remove"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Quitar atributo"
+            android:text="X" />
+</LinearLayout>

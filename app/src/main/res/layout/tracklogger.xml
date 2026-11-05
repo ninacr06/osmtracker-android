@@ -7,4 +7,9 @@
 
 	<LinearLayout android:id="@+id/tracklogger_root" android:layout_width="fill_parent"
 	    android:layout_height="fill_parent" android:orientation="vertical"></LinearLayout>
+	<!-- TODO(propuesta): boton Ficha. Al presionarlo se toma la posicion GPS actual
+     (igual que los demas botones) y se abre el formulario Nueva ficha (ficha_dialog.xml).
+     Nota: los botones de esta pantalla NO se declaran aqui: se crean por codigo dentro de
+     @id/tracklogger_root a partir de res/xml/default_buttons_layout.xml
+     (ver util/UserDefinedLayoutReader.inflateButton). El boton real iria alli. -->
 </LinearLayout>

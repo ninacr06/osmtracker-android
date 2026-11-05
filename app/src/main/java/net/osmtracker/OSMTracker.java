@@ -169,6 +169,8 @@ public class OSMTracker {
 	 * Key for extra data "uuid" in Intent
 	 */
 	public final static String INTENT_KEY_UUID = "uuid";
+	// TODO(propuesta): agregar una clave INTENT_KEY_ATTRIBUTES para enviar los atributos
+	// (pares clave-valor, por ejemplo como texto JSON) junto con el waypoint.
 	
 	/**
 	 * Approximation factor for calculating Horizontal Dilution of Precision

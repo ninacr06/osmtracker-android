@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  TODO(propuesta): formulario "Nueva ficha" (Figura 2 del documento).
+  Recurso de borrador: todavia no esta conectado a ninguna actividad.
+  Al guardar se crea UN solo waypoint con todos los atributos.
+  Los botones Cancelar / Guardar no van aqui: los pondria el propio dialogo
+  (setButton), como hace view/TextNoteDialog.java.
+  Modelo de estilo: edit_note_dialog.xml.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+        <!-- Nombre del elemento (se guarda en la columna name del waypoint). -->
+        <EditText
+                android:id="@+id/ficha_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre (ej. Árbol 1)"
+                android:imeOptions="actionNext"
+                android:inputType="text|textCapSentences" />
+
+        <!-- TODO(propuesta): la tabla waypoint no tiene columna de descripcion.
+             Decidir con el grupo: guardarla como un atributo mas o exportarla a desc. -->
+        <EditText
+                android:id="@+id/ficha_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción (opcional)"
+                android:inputType="textMultiLine|textCapSentences" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Atributos"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <LinearLayout
+                android:id="@+id/ficha_attributes_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        <Button
+                android:id="@+id/ficha_add_attribute"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="+ Agregar atributo" />
+
+    </LinearLayout>
+</ScrollView>

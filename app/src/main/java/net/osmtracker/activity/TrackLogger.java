@@ -155,7 +155,8 @@ public class TrackLogger extends Activity {
 	 * constant for voice recording dialog
 	 */
 	public static final int DIALOG_VOICE_RECORDING = 2;
-	
+	// TODO(propuesta): agregar aqui una constante DIALOG_FICHA = 3 para el formulario
+	// Nueva ficha (layout ficha_dialog.xml), junto a DIALOG_TEXT_NOTE y DIALOG_VOICE_RECORDING.
 	/**
 	 * sensor listener for the azimuth display
 	 */
@@ -696,6 +697,11 @@ public class TrackLogger extends Activity {
 		case DIALOG_TEXT_NOTE:
 			// create a new TextNoteDialog
 			return new TextNoteDialog(this, currentTrackId);
+			// TODO(propuesta): case DIALOG_FICHA: devolver aqui el formulario Nueva ficha
+			// (modelo: view/TextNoteDialog.java; layout ficha_dialog.xml).
+			// La posicion GPS se toma al abrir la ficha (INTENT_TRACK_WP) y se asocia a todos los
+			// atributos; al guardar se actualiza ese mismo waypoint (INTENT_UPDATE_WP) y al
+			// cancelar se borra (INTENT_DELETE_WP), igual que hace TextNoteDialog.
 		case DIALOG_VOICE_RECORDING:
 			if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
 					!= PackageManager.PERMISSION_GRANTED) {
