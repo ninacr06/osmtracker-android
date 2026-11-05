@@ -523,7 +523,6 @@ public abstract class ExportTrackTask extends AsyncTask<Void, Long, Boolean> {
 			//  así que los atributos irían dentro de <extensions>, con un elemento por atributo
 			//  y dentro del mismo "buff" de arriba, por ejemplo:
 			//  buff += "\t\t\t\t\t" + "<atributo clave=\"Especie\" valor=\"robur\"/>" + "\n";
-			//  Ejemplo completo de como quedaría un <wpt>: docs/GPX_EXTENSIONS.md
 			//  Posible mejora: autocompletar los nombres de los atributos con los que ya se usaron,
 			//  para que no queden "Especie" y "especie" distintos.
 			
